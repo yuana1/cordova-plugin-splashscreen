@@ -105,7 +105,7 @@ public class SplashScreen extends CordovaPlugin {
         // Save initial orientation.
         orientation = cordova.getActivity().getResources().getConfiguration().orientation;
 
-        if (firstShow) {
+        if (firstShow && !"cl.kunder.webview.WebViewActivity".equals(cordova.getActivity().getClass().getName())) {
             boolean autoHide = preferences.getBoolean("AutoHideSplashScreen", true);
             showSplashScreen(autoHide);
         }
